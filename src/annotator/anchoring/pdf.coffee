@@ -46,8 +46,13 @@ getPageTextContent = (pageIndex) ->
       nonEmpty = (item.str for item in items when /\S/.test(item.str))
       textContent = nonEmpty.join('')
       return textContent
+    #pageTextCache[pageIndex] = PDFViewerApplication.pdfViewer.getPageTextContent(pageIndex)
+    # add by wliang 11-21
+    getText = (page) ->
+      return page.getTextContent()
 
-    pageTextCache[pageIndex] = PDFViewerApplication.pdfViewer.getPageTextContent(pageIndex)
+    pageTextCache[pageIndex] = PDFViewerApplication.pdfDocument.getPage(pageIndex+1)
+    .then(getText)
     .then(joinItems)
     return pageTextCache[pageIndex]
 

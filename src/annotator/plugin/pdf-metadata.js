@@ -70,6 +70,8 @@ class PDFMetadata {
       if (!uri) {
         uri = fingerprintToURN(app.pdfDocument.fingerprint);
       }
+      // add by wliang
+      uri = document.location;
       return uri;
     });
   }
