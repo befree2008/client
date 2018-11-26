@@ -271,7 +271,8 @@ function generateBootScript(manifest) {
   let defaultAssetRoot;
 
   if (process.env.NODE_ENV === 'production') {
-    defaultAssetRoot = `https://cdn.hypothes.is/hypothesis/${version}/`;
+    //defaultAssetRoot = `https://cdn.hypothes.is/hypothesis/${version}/`;
+    defaultAssetRoot = `http://static.aixpaper.com/hypothesis/${version}/`;
   } else {
     const scheme = useSsl ? 'https': 'http';
     defaultAssetRoot = `${scheme}://${packageServerHostname()}:3001/hypothesis/${version}/`;
