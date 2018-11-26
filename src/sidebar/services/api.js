@@ -196,6 +196,7 @@ function createAPICall($http, $q, links, route, tokenGetter) {
  */
 // @ngInject
 function api($http, $q, apiRoutes, auth) {
+
   const links = apiRoutes.routes();
   function apiCall(route) {
     return createAPICall($http, $q, links, route, auth.tokenGetter);

@@ -48,6 +48,7 @@ function session($q, $rootScope, analytics, store, api, auth,
    * @return {Promise<Profile>} A promise for the user's profile data.
    */
   function load() {
+    
     if (!lastLoadTime || (Date.now() - lastLoadTime) > CACHE_TTL) {
 
       // The load attempt is automatically retried with a backoff.
@@ -64,6 +65,7 @@ function session($q, $rootScope, analytics, store, api, auth,
         }
         return api.profile.read(opts);
       }, profileFetchRetryOpts).then(function (session) {
+  
         update(session);
         lastLoadTime = Date.now();
         return session;
@@ -72,6 +74,7 @@ function session($q, $rootScope, analytics, store, api, auth,
         throw err;
       });
     }
+ 
     return lastLoad;
   }
 

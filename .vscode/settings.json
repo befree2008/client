@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        "**/docs": true,
+        "mail": true,
+        "**/tests": true,
+        "**/.tox": true,
+        "**/*.pyc":true,
+    },
+}

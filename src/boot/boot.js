@@ -98,6 +98,7 @@ function bootSidebarApp(doc, config) {
 }
 
 function boot(document_, config) {
+
   if (document_.querySelector('hypothesis-app')) {
     bootSidebarApp(document_, config);
   } else {

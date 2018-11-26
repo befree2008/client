@@ -1,10 +1,13 @@
 <!-- New controls -->
 <span class="login-text"
-      ng-if="vm.newStyle && vm.auth.status === 'unknown'">⋯</span>
+      ng-if="vm.newStyle && vm.auth.status === 'unknownwliang'">⋯</span>
 <span class="login-text"
-      ng-if="vm.newStyle && vm.auth.status === 'logged-out'">
+      ng-if="vm.newStyle && vm.auth.status === 'logged-outwliang'">
   <a href="" ng-click="vm.onSignUp()" target="_blank" h-branding="accentColor">Sign up</a>
   / <a href="" ng-click="vm.onLogin()" h-branding="accentColor">Log in</a>
+</span>
+<span class="login-text" >
+   <a href="http://www.aixpaper.com" target="_blank" h-branding="accentColor">Log in</a>
 </span>
 <div ng-if="vm.newStyle"
      class="pull-right login-control-menu"
@@ -29,13 +32,14 @@
          title="View all your annotations"
          target="_blank">{{vm.auth.displayName}}</a>
     </li>
-    <li class="dropdown-menu__row" ng-if="vm.auth.status === 'logged-in' && !vm.isThirdPartyUser()">
+
+    <li class="dropdown-menu__row" ng-if="vm.auth.status === 'nologged-in' && !vm.isThirdPartyUser()">
       <a class="dropdown-menu__link js-account-settings-btn" href="{{vm.serviceUrl('account.settings')}}" target="_blank">Account settings</a>
     </li>
-    <li class="dropdown-menu__row">
+    <li class="dropdown-menu__row" ng-if="vm.auth.status === 'nologged-in'">
       <a class="dropdown-menu__link js-help-btn" ng-click="vm.onShowHelpPanel()">Help</a>
     </li>
-    <li class="dropdown-menu__row" ng-if="vm.shouldShowLogOutButton()">
+    <li class="dropdown-menu__row" ng-if="vm.auth.status === 'nologged-in' && vm.shouldShowLogOutButton()">
       <a class="dropdown-menu__link dropdown-menu__link--subtle js-log-out-btn"
          href="" ng-click="vm.onLogout()">Log out</a>
     </li>

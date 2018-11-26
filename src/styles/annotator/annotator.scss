@@ -73,6 +73,7 @@ $base-font-size: 14px;
     height: 100%;
     width: 100%;
     z-index: 3;
+    top:40px;
     position: relative;
   }
 
@@ -93,6 +94,7 @@ $base-font-size: 14px;
     left: -($bucket-bar-width + 18px - 7px);
     width: 37px;
     z-index: 2;
+    top:40px;
 
     ul {
       height: 100%;

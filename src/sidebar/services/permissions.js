@@ -26,6 +26,7 @@ const STORAGE_KEY = 'hypothesis.privacy';
  */
 // @ngInject
 function Permissions(localStorage) {
+
   const self = this;
 
   function defaultLevel() {

@@ -92,6 +92,7 @@ function HypothesisAppController(
    *   completes. For non-OAuth logins, always resolves immediately.
    */
   this.login = function () {
+
     if (serviceConfig(settings)) {
       // Let the host page handle the login request
       bridge.call(bridgeEvents.LOGIN_REQUESTED);

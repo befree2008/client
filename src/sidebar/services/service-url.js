@@ -34,7 +34,7 @@ const urlUtil = require('../util/url-util');
  * @ngInject
  */
 function serviceUrl(store, apiRoutes) {
-
+ 
   apiRoutes.links()
     .then(store.updateLinks)
     .catch(function(error) {

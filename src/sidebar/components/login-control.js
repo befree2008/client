@@ -16,6 +16,7 @@ module.exports = {
     };
 
     this.shouldShowLogOutButton = function () {
+
       if (this.auth.status !== 'logged-in') {
         return false;
       }
